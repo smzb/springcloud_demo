@@ -1,0 +1,19 @@
+server:
+  port: 9090
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+
+spring:
+  application:
+    name: ms-config-server
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/pkfd/data-config-server
+          search-paths: config
+      label: master

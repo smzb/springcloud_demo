@@ -1,0 +1,21 @@
+server:
+  port: 8088
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+
+spring:
+  application:
+    name: zuul
+
+#配置serviceA和serviceD的路由网关
+zuul:
+  routes:
+    goods:
+      path: /api-serviceA/**
+      serviceId: SERVICEA
+    ucenter:
+      path: /api-serviceD/**
+      serviceId: SERVICED

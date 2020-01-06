@@ -1,0 +1,27 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: serviceD
+
+  cloud:
+    config:
+      label: master
+      profile: dev
+#      uri: http://localhost:9090/
+      discovery:
+        enabled: true
+        service-id: MS-CONFIG-SERVER
+
+  #actuator下默认端点时health和info，没有refresh端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, refresh, bus-refresh
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/

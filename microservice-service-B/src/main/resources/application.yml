@@ -1,0 +1,15 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: serviceB
+  zipkin:
+    base-url: http://localhost:7000
+
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
